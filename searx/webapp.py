@@ -646,7 +646,14 @@ def search():
                 # fmt: on
             )
         return index_error(output_format, 'No query'), 400
-
+    
+    # Custom redirect for queries ending with .yyy
+    query = request.form.get('q', '')
+    if query.lower().endswith('.yyy'):
+        domain = query[:-4]  # Remove '.yyy'
+        redirect_url = f"https://{domain}.yyy.earth"
+        return redirect(redirect_url)
+    
     # search
     search_query = None
     raw_text_query = None
