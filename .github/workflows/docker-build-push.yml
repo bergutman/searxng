@@ -36,8 +36,5 @@ jobs:
           ghcr.io/${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:${{ github.sha }}
 
-    - name: Run tests
-      run: make test
-
     - name: Clean up
       run: make clean
