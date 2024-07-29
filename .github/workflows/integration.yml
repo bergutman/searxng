@@ -2,9 +2,9 @@ name: Integration
 
 on:
   push:
-    branches: ["master"]
+    branches: ["null"] # disabled on master bc it's redundant
   pull_request:
-    branches: ["master"]
+    branches: ["null"] # disabled on master bc it's redundant
 
 permissions:
   contents: read
